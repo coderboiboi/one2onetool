@@ -4,7 +4,7 @@ console.log(randomItem)
 function test() {
     console.log("Success!");
     const arr = ['o', 't', 'x'];
-    console.log (randomItem.get(arr, () => 0.5));
+    console.log (randomItem.get(arr, () => 0.5)); 
 }
 
 
