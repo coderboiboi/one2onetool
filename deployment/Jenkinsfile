@@ -11,7 +11,13 @@ pipeline {
         stage('test') {
             steps {
                 echo 'test project'
-                sh '''deployment/test.sh'''
+                sh "deployment/test.sh"
+                }
+            }      
+        stage('build') {
+            steps {
+                echo 'build project'
+                sh "deployment/build.sh ${BRANCH}"
                 }
             }      
         stage('build') {
@@ -23,7 +29,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'deploy project'
-                sh '''deployment/deploy.sh'''
+                sh "deployment/deploy.sh ${TAG}"
                 }
             }
         }
@@ -42,4 +48,3 @@ pipeline {
      }  
     
 }
-
