@@ -2,15 +2,15 @@
 
 echo build
 
-if [ $# -ne 2 ]; then
+if [ $# -ne 1 ]; then
   echo "incorrect number of parameters
-  usage: $0 [branch] [tag]
-  example: $0 release 1.4"
+  usage: $0 [branch] 
+  example: $0 release" 
     exit 1
 fi
 
+image="one2onetool"
 branch=$1
-tag=$2
 
 if [ "$branch" == "release" ];then	
   #DATA_FILE="Questions.json"
@@ -23,5 +23,5 @@ fi
 
 #Start build
 cd ..
-docker build -t one2onetool:$tag .
+docker build -t $image:latest .
 
