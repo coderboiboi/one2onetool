@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Setup environment') {
             steps {
-                echo 'Setup environment'                
+                echo 'Setup environment'   
+                echo $ENV
                 script {
                     // Determine whether this is a test or a staging / release build                    
                     switch ($ENV) {
