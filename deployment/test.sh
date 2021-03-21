@@ -1,3 +1,5 @@
 #!/bin/sh
 
-echo test 
+echo test
+
+node test/test.js

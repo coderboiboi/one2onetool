@@ -4,7 +4,7 @@
 echo "Running pre-commit hook"
 dir=$(pwd)
 #$dir/unittest/run_tests.sh
-node $dir/test/randomItem.test.js
+node $dir/test/test.js
 
 
 # $? stores exit value of the last command
