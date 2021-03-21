@@ -10,10 +10,10 @@ Pre-commit hook ensures a first layer of unit test is done. Commit will be denie
 ![image](https://user-images.githubusercontent.com/81013119/111900654-c5881e80-8a6e-11eb-876b-35820994bd6b.png)
 
 ### Trigger Jenkins job
-2 parameters required - branch and tag
-Branch determines which repo branch is used to build
-Tag helps with versioning of docker image
+2 parameters required-branch and tag. Branch determines which repo branch is used to build. Tag helps with versioning of docker image
+ ---
 ![image](https://user-images.githubusercontent.com/81013119/111900695-f5cfbd00-8a6e-11eb-97fd-50a490cb9e36.png)
+ ---
 
 ### Job runs through pipeline based on Jenkinsfile
 #### 1. git-checkout
