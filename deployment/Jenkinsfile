@@ -7,24 +7,7 @@ pipeline {
                 git 'https://github.com/coderboiboi/one2onetool.git'
                 }
             }
-        stage('build') {
-            steps {
-                echo 'build'
-                sh build.sh
-                }
-            }
-        stage('test') {
-            steps {
-                echo 'test'
-                sh test.sh
-                }
-            }
-        stage('deploy') {
-            steps {
-                echo 'deploy'
-                sh deploy.sh
-                }
-            }
+
     }
 }
 
