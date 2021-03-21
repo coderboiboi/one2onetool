@@ -29,7 +29,7 @@ pipeline {
             }
         stage('build') {
             steps {
-                echo 'build project''
+                echo 'build project'
                 sh '''deployment/build.sh'''
                 }
             }
