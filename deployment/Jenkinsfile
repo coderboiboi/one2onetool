@@ -25,7 +25,7 @@ pipeline {
     	stage('git-checkout') {
             steps {
                 echo 'Checkout from git repo'
-                git branch: 'env.BRANCH_NAME', url: 'https://github.com/coderboiboi/one2onetool.git'
+                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/coderboiboi/one2onetool.git'
                 }
             }
         stage('build') {
