@@ -7,8 +7,8 @@ pipeline {
                 echo 'Setup environment'   
                 echo "${ENV}"
                 script {
-                    // Determine whether this is a test or a staging / release build                    
-                    switch ("${ENV}") {
+                    // Determine whether this is a test or a staging / release build. 
+                    switch (env.BRANCH_NAME) {
                         case 'RELEASE':
                             echo 'This is a release env'
                             break
