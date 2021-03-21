@@ -44,11 +44,11 @@ pipeline {
             steps {
                 echo 'deploy project'
                 sh '''deployment/deploy.sh'''
+                emailext body: '', subject: 'Deploy success!', to: 'abc@gmail.com'
                 }
             }
 
         }
     
-    emailext body: '', subject: 'Deploy success!', to: 'abc@gmail.com'
 }
 
