@@ -1,52 +1,31 @@
 pipeline {
     agent any
     
-    stages {
-        stage('Setup environment') {
-            steps {
-                echo 'Setup environment'   
-                script {
-                    // Determine whether this is a test or a staging / release build. 
-                    switch (env.BRANCH_NAME) {
-                        case 'release':
-                            INPUT_FILE="Questions.json"                        
-                            echo "This is a release env. Input file used:${INPUT_FILE}"
-                            break
-                        case 'staging':
-                            INPUT_FILE="Questions-test.json"
-                            echo "This is a staging env. Input file used:${INPUT_FILE}"
-                            break
-                              }
-                          }
-                        }
-                      }
-          
-                
+    stages {        
     	stage('git-checkout') {
             steps {
                 echo 'Checkout from git repo'
-                git branch: 'test', url: 'https://github.com/coderboiboi/one2onetool.git'
-                }
-            }
-        stage('build') {
-            steps {
-                echo 'build project'
-                sh '''deployment/build.sh'''
+                git branch: "${BRANCH}", url: 'https://github.com/coderboiboi/one2onetool.git'
                 }
             }
         stage('test') {
             steps {
                 echo 'test project'
-                sh '''deployment/test.sh'''
+                sh "deployment/test.sh"
+                }
+            }      
+        stage('build') {
+            steps {
+                echo 'build project'
+                sh "deployment/build.sh ${BRANCH}"
                 }
             }
         stage('deploy') {
             steps {
                 echo 'deploy project'
-                sh '''deployment/deploy.sh'''
+                sh "deployment/deploy.sh ${TAG}"
                 }
             }
-
         }
     
     post {  
@@ -63,4 +42,3 @@ pipeline {
      }  
     
 }
-
