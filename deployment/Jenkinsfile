@@ -8,7 +8,7 @@ pipeline {
                 echo $ENV
                 script {
                     // Determine whether this is a test or a staging / release build                    
-                    switch ($ENV) {
+                    switch (${ENV}) {
                         case 'RELEASE':
                             echo 'This is a release env'
                             break
