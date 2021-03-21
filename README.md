@@ -7,7 +7,9 @@ Use of precommit hook in .git for unit testing before each commit.
 ## Lifecycle
 ### Commit change
 Pre-commit hook ensures a first layer of unit test is done. Commit will be denied if non-zero exit code is returned. 
+***
 ![image](https://user-images.githubusercontent.com/81013119/111900654-c5881e80-8a6e-11eb-876b-35820994bd6b.png)
+***
 
 ### Trigger Jenkins job
 2 parameters required-branch and tag. Branch determines which repo branch is used to build. Tag helps with versioning of docker image
