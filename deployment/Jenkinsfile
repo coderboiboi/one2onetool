@@ -11,7 +11,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'build project'
-                sh "deployment/build.sh ${BRANCH}"
+                sh "deployment/build.sh ${BRANCH} ${TAG}"
                 }
             }
         stage('test') {
