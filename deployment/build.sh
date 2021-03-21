@@ -22,6 +22,6 @@ elif [ "$branch" == "staging" ];then
 fi
 
 #Start build
-cd ..
-docker build -t $image:latest .
+#cd ..
+#docker build -t $image:latest .
 

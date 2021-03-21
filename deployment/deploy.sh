@@ -12,7 +12,7 @@ aws_registry="us-west-2.amazonaws.com"
 image="one2onetool"
 tag=$1
 
-aws ecr get-login --no-include-email --region us-west-2
+#aws ecr get-login --no-include-email --region us-west-2
 
-docker tag $image:latest $aws_registry/$image:$tag
-docker push $aws_registry/$image:$tag 
+#docker tag $image:latest $aws_registry/$image:$tag
+#docker push $aws_registry/$image:$tag 
