@@ -11,9 +11,9 @@ Pre-commit hook ensures a first layer of unit test is done. Commit will be denie
 
 ### Trigger Jenkins job
 2 parameters required-branch and tag. Branch determines which repo branch is used to build. Tag helps with versioning of docker image
- ---
+****
 ![image](https://user-images.githubusercontent.com/81013119/111900695-f5cfbd00-8a6e-11eb-97fd-50a490cb9e36.png)
- ---
+****
 
 ### Job runs through pipeline based on Jenkinsfile
 #### 1. git-checkout
@@ -29,4 +29,7 @@ Branch parameter is passed into build job. Determines which DATA_FILE to be used
 Tag parameter is passed into deploy job. Will help with versioning when pushing to AWS/DockerHub Repo.
 
 
+### Overall status of pipeline should be viewable from Jenkins
+****
 ![image](https://user-images.githubusercontent.com/81013119/111900556-3c70e780-8a6e-11eb-88e0-d1c6b32032fb.png)
+****
