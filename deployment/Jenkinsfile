@@ -29,9 +29,7 @@ pipeline {
             }
         stage('build') {
             steps {
-                echo 'build project'
-                sh '''pwd'''
-                sh '''ls -lrt'''
+                echo 'build project''
                 sh '''deployment/build.sh'''
                 }
             }
@@ -45,11 +43,23 @@ pipeline {
             steps {
                 echo 'deploy project'
                 sh '''deployment/deploy.sh'''
-                emailext body: '', subject: 'Deploy success!', to: 'abc@gmail.com'
                 }
             }
 
         }
+    
+    post {  
+         success {  
+             echo 'Success!'
+             emailext body: '', subject: 'Deploy success!', to: 'abc@gmail.com' 
+         }  
+         failure {  
+             emailext body: '', subject: 'Deploy failure!', to: 'abc@gmail.com'  
+         }  
+         unstable {  
+             emailext body: '', subject: 'Deploy unstable!', to: 'abc@gmail.com'
+         }  
+     }  
     
 }
 
