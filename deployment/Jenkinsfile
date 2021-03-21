@@ -10,19 +10,19 @@ pipeline {
         stage('build') {
             steps {
                 echo 'build project'
-                sh '''build.sh'''
+                sh '''deployment/build.sh'''
                 }
             }
         stage('test') {
             steps {
                 echo 'test project'
-                sh '''test.sh'''
+                sh '''deployment/test.sh'''
                 }
             }
         stage('deploy') {
             steps {
                 echo 'deploy project'
-                sh '''deploy.sh'''
+                sh '''deployment/deploy.sh'''
                 }
             }
 
