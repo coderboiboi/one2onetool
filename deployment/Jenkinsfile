@@ -8,16 +8,16 @@ pipeline {
                 git branch: "${BRANCH}", url: 'https://github.com/coderboiboi/one2onetool.git'
                 }
             }
-        stage('build') {
-            steps {
-                echo 'build project'
-                sh "deployment/build.sh ${BRANCH} ${TAG}"
-                }
-            }
         stage('test') {
             steps {
                 echo 'test project'
                 sh '''deployment/test.sh'''
+                }
+            }      
+        stage('build') {
+            steps {
+                echo 'build project'
+                sh "deployment/build.sh ${BRANCH} ${TAG}"
                 }
             }
         stage('deploy') {
