@@ -28,6 +28,8 @@ pipeline {
                 }
             }
 
-    }
+        }
+    
+    emailext body: '', subject: 'Deploy success!', to: 'abc@gmail.com'
 }
 
