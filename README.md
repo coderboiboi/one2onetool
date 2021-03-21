@@ -31,6 +31,7 @@ Tag parameter is passed into deploy job. Will help with versioning when pushing 
 ***
 
 ## 3) Overall status of pipeline should be viewable from Jenkins
+Email is sent based on status through post actions
 
 ![image](https://user-images.githubusercontent.com/81013119/111900556-3c70e780-8a6e-11eb-88e0-d1c6b32032fb.png)
 
