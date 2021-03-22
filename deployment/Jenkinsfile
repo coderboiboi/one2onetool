@@ -20,12 +20,7 @@ pipeline {
                 sh "deployment/build.sh ${BRANCH}"
                 }
             }      
-        stage('build') {
-            steps {
-                echo 'build project'
-                sh "deployment/build.sh ${BRANCH} ${TAG}"
-                }
-            }
+
         stage('deploy') {
             steps {
                 echo 'deploy project'
